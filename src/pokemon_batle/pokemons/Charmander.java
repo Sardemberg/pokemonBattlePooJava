@@ -2,27 +2,29 @@ package pokemon_batle.pokemons;
 
 import java.util.Random;
 import pokemon_batle.Pokemon;
-import pokemon_battle.mega_evolutions.EvolutionX;
+import pokemon_battle.mega_evolutions.EvolutionY;
 
-public class Pikachu extends Pokemon implements EvolutionX {
+
+public class Charmander extends Pokemon implements EvolutionY {
     private Random sort;
     
-    public Pikachu(){
-        super("Pikachu", "Elétrico", true);
+    public Charmander(){
+        super("Charmander", "Fogo", true);
     }
 
     @Override
-    public int atacar(String efetivity) {
+    public int atacar(String efetivity){
         return get_efetivity_attack(efetivity);
     }
 
     @Override
-    public int defender(String efetivity) {
+    public int defender(String efetivity){
         return get_efetivity_defense(efetivity);
     }
 
-    private int get_efetivity_attack(String efetivity) {
-        switch (efetivity) {
+
+    private int get_efetivity_attack(String efetivity){
+        switch (efetivity){
             case "critical": {
                 return sort.nextInt(60);
             }
@@ -33,12 +35,12 @@ public class Pikachu extends Pokemon implements EvolutionX {
                 return sort.nextInt(20);
             }
         }
-
+        
         return 0;
     }
 
-    private int get_efetivity_defense(String efetivity) {
-        switch (efetivity) {
+    private int get_efetivity_defense(String efetivity){
+        switch (efetivity){
             case "critical": {
                 return sort.nextInt(20);
             }
@@ -49,17 +51,17 @@ public class Pikachu extends Pokemon implements EvolutionX {
                 return sort.nextInt(30);
             }
         }
-
+        
         return 0;
     }
 
     @Override
-    public void heal() {
+    public void double_attack() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public void revive() {
+    public void reforce_defender() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

@@ -6,7 +6,7 @@ package pokemon_batle;
 
 /**
  *
- * @author Aluno
+ * @author Lui Richard
  */
 public class Arena {
 

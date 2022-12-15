@@ -2,13 +2,13 @@ package pokemon_batle.pokemons;
 
 import java.util.Random;
 import pokemon_batle.Pokemon;
-import pokemon_battle.mega_evolutions.EvolutionX;
 
-public class Pikachu extends Pokemon implements EvolutionX {
+public class Chikorita extends Pokemon {
+
     private Random sort;
-    
-    public Pikachu(){
-        super("Pikachu", "Elétrico", true);
+
+    public Chikorita() {
+        super("Chikorita", "Grama");
     }
 
     @Override
@@ -51,15 +51,5 @@ public class Pikachu extends Pokemon implements EvolutionX {
         }
 
         return 0;
-    }
-
-    @Override
-    public void heal() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public void revive() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

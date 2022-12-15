@@ -5,19 +5,26 @@
  */
 package pokemon_batle;
 
-import java.util.*;
-
 /**
  *
- * @author Aluno
+ * @author Sardemberg
  */
 public abstract class Pokemon {
+
     private int life = 100;
     private String name;
     private String type;
+    private boolean has_mega_evolution = false;
+
+    public Pokemon(String name, String type, boolean has_mega_evolution) {
+        this.name = name;
+        this.type = type;
+        this.has_mega_evolution = has_mega_evolution;
+    }
 
     public abstract int atacar(String efetivity);
-    public abstract int defender();
+
+    public abstract int defender(String efetivity);
 
     public int getLife() {
         return life;
@@ -41,5 +48,12 @@ public abstract class Pokemon {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public boolean isAlive() {
+        if (this.life > 0) {
+            return true;
+        }
+        return false;
     }
 }
