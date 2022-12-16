@@ -22,9 +22,9 @@ public abstract class Pokemon {
         this.has_mega_evolution = has_mega_evolution;
     }
 
-    public abstract int atacar(String efetivity);
+    public abstract int atacar();
 
-    public abstract int defender(String efetivity);
+    public abstract int defender();
 
     public int getLife() {
         return life;
@@ -51,9 +51,22 @@ public abstract class Pokemon {
     }
 
     public boolean isAlive() {
-        if (this.life > 0) {
+        if (this.getLife() > 0) {
             return true;
         }
         return false;
+    }
+    
+    public void setDano(int dano){
+        this.setLife(this.getLife() - dano);
+        System.out.println("O pokemon " + this.getName() + " Sofreu " + dano + " de dano");
+    }
+    
+    public void setHasMegaEvolution(boolean has_mega_evolution){
+        this.has_mega_evolution = has_mega_evolution;
+    }
+    
+    public boolean getHasMegaEvolution(){
+        return this.has_mega_evolution;
     }
 }

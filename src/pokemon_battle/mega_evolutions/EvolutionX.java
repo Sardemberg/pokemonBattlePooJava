@@ -10,5 +10,6 @@ package pokemon_battle.mega_evolutions;
  */
 public interface EvolutionX {
     public void heal();
-    public void revive();
+    public boolean revive();
+    public void anuncia_evolution();
 }

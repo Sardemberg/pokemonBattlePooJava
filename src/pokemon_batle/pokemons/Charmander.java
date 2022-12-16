@@ -6,62 +6,43 @@ import pokemon_battle.mega_evolutions.EvolutionY;
 
 
 public class Charmander extends Pokemon implements EvolutionY {
-    private Random sort;
+    private Random sort = new Random();
     
     public Charmander(){
         super("Charmander", "Fogo", true);
     }
 
     @Override
-    public int atacar(String efetivity){
-        return get_efetivity_attack(efetivity);
+    public int atacar() {
+        return this.reforce_attack() + 45 + sort.nextInt(65);
     }
 
     @Override
-    public int defender(String efetivity){
-        return get_efetivity_defense(efetivity);
+    public int defender() {
+        return this.reforce_defender() + 1 + sort.nextInt(45);
     }
 
-
-    private int get_efetivity_attack(String efetivity){
-        switch (efetivity){
-            case "critical": {
-                return sort.nextInt(60);
-            }
-            case "normal": {
-                return sort.nextInt(40);
-            }
-            case "non_efective": {
-                return sort.nextInt(20);
-            }
-        }
+    @Override
+    public int reforce_attack() {
+        int chance = 1 + sort.nextInt(4);
         
-        return 0;
-    }
-
-    private int get_efetivity_defense(String efetivity){
-        switch (efetivity){
-            case "critical": {
-                return sort.nextInt(20);
-            }
-            case "normal": {
-                return sort.nextInt(25);
-            }
-            case "non_efective": {
-                return sort.nextInt(30);
-            }
+        if (chance == 4){
+            System.out.println("O pokemon " + this.getName() + " teve reforço de 25 no ataque!"); 
+            return 25;
         }
         
         return 0;
     }
 
     @Override
-    public void double_attack() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public void reforce_defender() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public int reforce_defender() {
+        int chance = 1 + sort.nextInt(4);
+        
+        if (chance == 4){
+            System.out.println("O pokemon " + this.getName() + " teve reforço de 25 na defesa!"); 
+            return 25;
+        }
+        
+        return 0;
     }
 }
